@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-image: url(favicon.ico);
+    background-color: #7C0B2B;
+}
+
+.contaner{
+    background-color:#e04d52;
+    padding: 2rem;
+    border-radius: 1rem;
+    min-height:50vh;
+    min-width: 45vh;
+    color: white;
+
+}
+.contaner:hover{
+    box-shadow: 0 0 20px 15px #dd8586;
+}
+
+form{
+    margin: 2rem 0 1rem 0;
+}
+
+form select, button, input{
+    width: 100%;
+    border:none;
+    outline: none;
+    border-radius: 0.75rem;
+    background-color: transparent;
+   
+}
+
+form input{
+    border :1px solid lightgray;
+    font-size: 1rem;
+    height: 2rem;
+    padding-left: 0.5rem;
+    color: white;
+    
+}
+
+
+.dropdown{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+.dropdown i{
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+
+.select-contaner img{
+    width: 2rem;
+}
+.select-contaner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+     border-radius: .5rem;
+     border: 1px solid lightgrey;
+    
+}
+
+.select-contaner select{
+    font-size: 1rem;
+    margin-left: .5rem;
+    width: auto;
+    color: white;
+   
+}
+ 
+
+
+.msg{
+    margin: 2rem 0 2rem 0 ;
+}
+
+form button {
+    height: 3rem;
+    background-color: #cf1ba5;
+    color: #fff;
+    font-size: 1.2rem;
+}
+form button:hover{
+    cursor:pointer;
+    font-weight: 600;
+}
