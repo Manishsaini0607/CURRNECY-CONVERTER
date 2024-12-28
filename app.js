@@ -47,23 +47,32 @@ const updateFlage =(element)=>{
 }
 
 
-upDateExchangeRate=async()=>{
+
+
+try{
+    upDateExchangeRate=async()=>{
  
-    let amount=document.querySelector(".amount input").value;
-    let fromCurr =fromSelect.value;
-    let toCurr = toSelect.value;
-
-    if (amount==="" || amount<1 ){
-       alert("plese inter the Amount")
-    }
+        let amount=document.querySelector(".amount input").value;
+        let fromCurr =fromSelect.value;
+        let toCurr = toSelect.value;
+    
+        if (amount==="" || amount<1 ){
+           alert("plese inter the Amount")
+        }
+       
+        let response= await fetch(api)
+        let data= await response.json();
+        let fromExchangeRate = data.conversion_rates[fromCurr];
+        let toExchangeRate = data.conversion_rates[toCurr];
+    
+      let finalExchangeRate= (toExchangeRate/fromExchangeRate)*amount;
+       msg.innerHTML=`${amount} ${fromCurr} = ${finalExchangeRate.toFixed(2)} ${toCurr}` } ;
    
-    let response= await fetch(api)
-    let data= await response.json();
-    let fromExchangeRate = data.conversion_rates[fromCurr];
-    let toExchangeRate = data.conversion_rates[toCurr];
 
-  let finalExchangeRate= (toExchangeRate/fromExchangeRate)*amount;
-   msg.innerHTML=`${amount} ${fromCurr} = ${finalExchangeRate.toFixed(2)} ${toCurr}` ;
+
+}catch(error){
+    console.log(error);
+    console.log('history')
 }
 
 
